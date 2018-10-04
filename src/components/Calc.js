@@ -6,7 +6,7 @@ class Calc extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			result: '',
+			output: '',
 			num0: '',
 			num1: '',
 			op: null
@@ -36,13 +36,13 @@ class Calc extends Component {
 			case 0:
 				this.setState((prevState) => ({
 					num0: (prevState.num0 += val.toString()),
-					result: this.state.num0
+					output: this.state.num0
 				}));
 				break;
 			case 1:
 				this.setState((prevState) => ({
 					num1: (prevState.num1 += val.toString()),
-					result: this.state.num1
+					output: this.state.num1
 				}));
 				break;
 			default:
@@ -53,13 +53,13 @@ class Calc extends Component {
 	handleOp(op) {
 		this.setState({
 			op: op,
-			result: op
+			output: op
 		});
 	}
 
 	clearAll = () => {
 		this.setState({
-			result: 0,
+			output: 0,
 			num0: '',
 			num1: '',
 			op: null
@@ -67,9 +67,9 @@ class Calc extends Component {
 	};
 
 	handleEq = () => {
-		var result = math.eval(`${this.state.num0} ${this.state.op} ${this.state.num1}`);
+		var output = math.eval(`${this.state.num0} ${this.state.op} ${this.state.num1}`);
 		this.setState({
-			result: result,
+			output: output,
 			num0: '',
 			num1: '',
 			op: null
@@ -80,7 +80,7 @@ class Calc extends Component {
 		return (
 			<div>
 				<h1>
-					<input placeholder={this.state.result} style={{ width: '180px' }} />
+					<input placeholder={this.state.output} style={{ width: '180px' }} />
 				</h1>
 				<table>
 					<tbody>
