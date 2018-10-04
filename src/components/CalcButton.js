@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 
-class CalcButton extends Component {
-	click = () => {
-		this.props.clickHandler(this.props.val, this.props.type);
-	};
-	render() {
-		return (
-			<Button bsStyle={this.props.bstyle} bsSize="large" onClick={this.click}>
-				{this.props.val}
-			</Button>
-		);
-	}
-}
+const CalcButton = (props) => {
+	return (
+		<Button bsStyle={props.bstyle} bsSize="large" onClick={() => props.clickHandler(props.val, props.type)}>
+			{props.val}
+		</Button>
+	);
+};
 
 export default CalcButton;
