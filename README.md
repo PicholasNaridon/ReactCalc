@@ -1,4 +1,4 @@
-# React Calculator
+# React Calculator!
 
 ![calc](https://i.imgur.com/Ojsl9fm.png)
 
